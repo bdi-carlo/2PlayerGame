@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.bTicTac).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent( cont, TicTacToeActivity.class );
+                Intent intent = new Intent( cont, ConfigTicTacToeActivity.class );
                 startActivity( intent );
             }
         });

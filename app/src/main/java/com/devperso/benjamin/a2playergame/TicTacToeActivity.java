@@ -15,6 +15,8 @@ public class TicTacToeActivity extends AppCompatActivity {
     private int tour;
     private TextView text;
     public Context cont;
+    private String player1;
+    private String player2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,8 +24,8 @@ public class TicTacToeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_tic_tac_toe);
 
         Intent intent = getIntent();
-        String prenom = intent.getStringExtra("prenom");
-        String nom = intent.getStringExtra("nom");
+        player1 = intent.getStringExtra("player1");
+        player2 = intent.getStringExtra("player2");
 
         this.tour = 1;
         this.text = findViewById( R.id.textView);
@@ -113,13 +115,18 @@ public class TicTacToeActivity extends AppCompatActivity {
 
         if( win == 1 ){
             this.statut = 1;
-            this.text.setText( getString(R.string.player) + " " + joueur + " " + getString(R.string.win) );
+            if( joueur == 1 )
+                this.text.setText( this.player1 + " " + getString(R.string.win) );
+            else
+                this.text.setText( this.player2 + " " + getString(R.string.win) );
         }
     }
 
     public void setText(){
-        String message = getString(R.string.player) + " " + this.tour;
-        this.text.setText( message );
+        if( this.tour == 1 )
+            this.text.setText( this.player1 );
+        else
+            this.text.setText( this.player2 );
     }
 
 }
