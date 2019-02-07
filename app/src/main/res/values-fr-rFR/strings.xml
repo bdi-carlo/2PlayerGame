@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">2PlayerGame</string>
+    <string name="bBack">Retour</string>
+    <string name="bReset">Recommencer</string>
+    <string name="finish">La partie est finie !</string>
+    <string name="full">Case déjà remplie !</string>
+    <string name="player">Joueur</string>
+    <string name="tictactoe">Morpion</string>
+    <string name="tie">Egalité !</string>
+    <string name="win">gagné !</string>
+    <string name="bExit">Quitter</string>
+</resources>

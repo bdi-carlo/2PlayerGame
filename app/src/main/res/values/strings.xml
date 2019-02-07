@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">2PlayerGame</string>
+
+    <string name="ticTitle">Tic Tac Toe</string>
+    <string name="tie">Tie !</string>
+    <string name="win">won !</string>
+    <string name="player">Player</string>
+    <string name="finish">Game is finished !</string>
+    <string name="full">Box is already filled !</string>
+    <string name="bBack">Back</string>
+    <string name="bReset">Reset</string>
+    <string name="bExit">Exit</string>
+</resources>
