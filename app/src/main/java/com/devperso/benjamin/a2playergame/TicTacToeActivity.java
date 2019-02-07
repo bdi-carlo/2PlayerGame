@@ -1,6 +1,7 @@
 package com.devperso.benjamin.a2playergame;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -19,6 +20,10 @@ public class TicTacToeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tic_tac_toe);
+
+        Intent intent = getIntent();
+        String prenom = intent.getStringExtra("prenom");
+        String nom = intent.getStringExtra("nom");
 
         this.tour = 1;
         this.text = findViewById( R.id.textView);
