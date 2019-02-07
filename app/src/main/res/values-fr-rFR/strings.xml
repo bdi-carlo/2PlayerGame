@@ -6,8 +6,11 @@
     <string name="finish">La partie est finie !</string>
     <string name="full">Case déjà remplie !</string>
     <string name="player">Joueur</string>
-    <string name="tictactoe">Morpion</string>
     <string name="tie">Egalité !</string>
     <string name="win">gagné !</string>
     <string name="bExit">Quitter</string>
+    <string name="bStart">Commencer</string>
+    <string name="ticTitle">Morpion</string>
+    <string name="player1">Joueur 1</string>
+    <string name="player2">Joueur 2</string>
 </resources>

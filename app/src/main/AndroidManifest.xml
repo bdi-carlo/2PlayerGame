@@ -18,7 +18,8 @@
         </activity>
         <activity android:name=".TicTacToeActivity" />
         <activity android:name=".SpeedBalloon" />
-        <activity android:name=".SpeedBalloonActivity"></activity>
+        <activity android:name=".SpeedBalloonActivity" />
+        <activity android:name=".ConfigTicTacToeActivity"></activity>
     </application>
 
 </manifest>

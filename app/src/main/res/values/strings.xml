@@ -10,4 +10,7 @@
     <string name="bBack">Back</string>
     <string name="bReset">Reset</string>
     <string name="bExit">Exit</string>
+    <string name="bStart">Start</string>
+    <string name="player1">Player 1</string>
+    <string name="player2">Player 2</string>
 </resources>
