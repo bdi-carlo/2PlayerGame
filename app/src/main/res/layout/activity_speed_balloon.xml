@@ -7,94 +7,137 @@
     android:background="@drawable/nuage"
     tools:context=".SpeedBalloonActivity">
 
-<TextView
-    android:id="@+id/minuteur"
-    android:layout_width="100dp"
-    android:layout_height="wrap_content"
-    android:textAlignment="center"
-    android:textColor="@android:color/black"
-    android:textSize="30sp"
-    android:textStyle="bold"
-    tools:ignore="MissingConstraints"
-    tools:layout_editor_absoluteX="0dp"
-    tools:layout_editor_absoluteY="0dp"
-    tools:text="1:00" />
-
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center_horizontal"
-    android:orientation="vertical"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent">
-
     <TextView
-        android:id="@+id/scoretotal"
+        android:id="@+id/minuteur"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:fontFamily="casual"
         android:textAlignment="center"
         android:textColor="@android:color/black"
-        android:textSize="36sp"
+        android:textSize="30sp"
         android:textStyle="bold"
-        android:visibility="visible"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp"
+        tools:text="1:00" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="0dp" />
+        app:layout_constraintStart_toStartOf="parent">
 
-    <ImageView
-        android:id="@+id/balloonblack1"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:onClick="burstballoon"
-        android:src="@drawable/balloonblack"
-        android:visibility="invisible"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="341dp" />
+        <TextView
+            android:id="@+id/scoretotal"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="casual"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="0dp" />
 
-    <ImageView
-        android:id="@+id/balloonred1"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:onClick="burstballoon"
-        android:src="@drawable/balloonred"
-        android:visibility="invisible"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="441dp" />
-</LinearLayout>
+        <ImageView
+            android:id="@+id/balloonblack1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:onClick="burstballoon"
+            android:src="@drawable/balloonblack"
+            android:visibility="gone"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="341dp" />
 
-<!--
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/balloonred"
-        android:id="@+id/balloonred2"
-        tools:ignore="MissingConstraints" />
+        <ImageView
+            android:id="@+id/balloonblack2"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:onClick="burstballoon"
+            android:src="@drawable/balloonblack"
+            android:visibility="gone"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="341dp" />
 
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/balloonred"
-        android:id="@+id/balloonred3"
-        tools:ignore="MissingConstraints" />
+        <ImageView
+            android:id="@+id/balloonred1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:onClick="burstballoon"
+            android:src="@drawable/balloonred"
+            android:visibility="gone"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="441dp" />
 
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/balloonred"
-        android:id="@+id/balloonred4"
-        tools:ignore="MissingConstraints" />
+        <ImageView
+            android:id="@+id/balloonpurple1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:onClick="burstballoon"
+            android:src="@drawable/balloonpurple"
+            android:visibility="gone"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="441dp" />
 
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/balloonred"
-        android:id="@+id/balloonred5"
-        tools:ignore="MissingConstraints" />
+        <ImageView
+            android:id="@+id/balloongreen1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:onClick="burstballoon"
+            android:src="@drawable/balloongreen"
+            android:visibility="gone"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="441dp" />
 
--->
+        <ImageView
+            android:id="@+id/balloonyellow1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:onClick="burstballoon"
+            android:src="@drawable/balloonyellow"
+            android:visibility="gone"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="441dp" />
 
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal|center_vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <ImageView
+            android:id="@+id/nuage1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/nuage1"
+            android:visibility="gone"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="441dp" />
+
+        <ImageView
+            android:id="@+id/nuage2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/nuage2"
+            android:visibility="gone"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="441dp" />
+
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

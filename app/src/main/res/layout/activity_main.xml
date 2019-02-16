@@ -4,65 +4,101 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/wallpaper"
+    android:background="#a00000"
     tools:context=".MainActivity"
     tools:layout_editor_absoluteY="25dp">
 
-    <HorizontalScrollView
-        android:id="@+id/horizontalScrollView"
+    <ScrollView
+        android:id="@+id/scrollView3"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_gravity="center"
-        android:layout_marginBottom="136dp"
+        android:background="#0f0f0f"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gameName">
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout2">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/relativeLayout5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/bTicTac"
-                android:layout_width="200dp"
-                android:layout_height="200dp"
-                android:layout_marginRight="10dp"
-                android:layout_weight="1"
+                android:id="@+id/imageView23"
+                android:layout_width="382dp"
+                android:layout_height="156dp"
+                android:layout_marginTop="488dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/tictactoe" />
 
             <ImageView
-                android:id="@+id/bSpeedBalloon"
-                android:layout_width="200dp"
-                android:layout_height="200dp"
-                android:layout_marginRight="10dp"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/balloonicon" />
+                android:id="@+id/bHangman"
+                android:layout_width="382dp"
+                android:layout_height="156dp"
+                android:layout_marginTop="327dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/hangman" />
 
             <ImageView
-                android:id="@+id/imageView13"
-                android:layout_width="200dp"
-                android:layout_height="200dp"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/trump" />
+                android:id="@+id/bSpeedBalloon"
+                android:layout_width="382dp"
+                android:layout_height="156dp"
+                android:layout_marginTop="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/speedballoon" />
 
-        </LinearLayout>
-    </HorizontalScrollView>
+            <ImageView
+                android:id="@+id/bTicTac"
+                android:layout_width="382dp"
+                android:layout_height="156dp"
+                android:layout_marginTop="166dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/tictactoe" />
 
-    <TextView
-        android:id="@+id/gameName"
-        style="@style/Widget.AppCompat.TextView.SpinnerItem"
-        android:layout_width="256dp"
-        android:layout_height="51dp"
-        android:layout_marginBottom="134dp"
-        android:layout_marginEnd="64dp"
-        android:layout_marginTop="50dp"
-        android:text="2PlayerGame"
-        android:textColor="@android:color/white"
-        android:textSize="40dp"
-        app:layout_constraintBottom_toTopOf="@+id/horizontalScrollView"
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/relativeLayout2"
+        android:layout_width="0dp"
+        android:layout_height="172dp"
+        android:layout_marginTop="1dp"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/app_name"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView12" />
+
+        <ImageView
+            android:id="@+id/imageView12"
+            android:layout_width="251dp"
+            android:layout_height="112dp"
+            android:layout_marginTop="9dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/logo" />
+    </android.support.constraint.ConstraintLayout>
 
 </android.support.constraint.ConstraintLayout>

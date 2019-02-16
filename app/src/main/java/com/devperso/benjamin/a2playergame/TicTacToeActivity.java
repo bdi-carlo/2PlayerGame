@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.Random;
+
 public class TicTacToeActivity extends AppCompatActivity {
 
     public int statut; //0: playing / 1: victory / 2: tie
@@ -27,7 +29,8 @@ public class TicTacToeActivity extends AppCompatActivity {
         player1 = intent.getStringExtra("player1");
         player2 = intent.getStringExtra("player2");
 
-        this.tour = 1;
+        this.tour = (int)(Math.random()*2) + 1;
+        System.out.println(this.tour);
         this.text = findViewById( R.id.textView);
         this.statut = 0;
         this.cont = getBaseContext();
@@ -55,7 +58,7 @@ public class TicTacToeActivity extends AppCompatActivity {
                 for( int i=0 ; i < 9 ; i++ ){
                     cases[i].reset();
                     statut = 0;
-                    tour = 1;
+                    tour = (int)(Math.random()*2) + 1;
                     setText();
                 }
             }

@@ -4,132 +4,152 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/wallpaper"
-    tools:context=".TicTacToeActivity">
+    android:background="#292929"
+    tools:context=".TicTacToeActivity"
+    tools:layout_editor_absoluteY="25dp">
 
-    <android.support.v7.widget.GridLayout
-        android:id="@+id/gridLayout"
-        android:layout_width="360dp"
-        android:layout_height="360dp"
-        android:layout_marginBottom="120dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginStart="12dp"
-        android:background="#000000"
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/relativeLayout3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout4">
 
-        <ImageView
-            android:id="@+id/imageView1"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            app:layout_column="0"
-            app:layout_row="0"
-            app:srcCompat="@drawable/empty" />
+        <Button
+            android:id="@+id/bRetour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:background="#a00000"
+            android:text="@string/bBack"
+            android:textColor="#000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            app:layout_column="1"
-            app:layout_row="0"
-            app:srcCompat="@drawable/empty" />
+        <Button
+            android:id="@+id/bReset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="#a00000"
+            android:text="@string/bReset"
+            android:textColor="#000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            app:layout_column="2"
-            app:layout_row="0"
-            app:srcCompat="@drawable/empty" />
+        <android.support.v7.widget.GridLayout
+            android:id="@+id/gridLayout"
+            android:layout_width="360dp"
+            android:layout_height="360dp"
+            android:background="#000000"
+            app:layout_constraintBottom_toTopOf="@+id/bRetour"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/imageView5"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            app:layout_column="1"
-            app:layout_row="1"
-            app:srcCompat="@drawable/empty" />
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                app:layout_column="0"
+                app:layout_row="0"
+                app:srcCompat="@drawable/empty" />
 
-        <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            app:layout_column="0"
-            app:layout_row="1"
-            app:srcCompat="@drawable/empty" />
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                app:layout_column="1"
+                app:layout_row="0"
+                app:srcCompat="@drawable/empty" />
 
-        <ImageView
-            android:id="@+id/imageView6"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            app:layout_column="2"
-            app:layout_row="1"
-            app:srcCompat="@drawable/empty" />
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                app:layout_column="2"
+                app:layout_row="0"
+                app:srcCompat="@drawable/empty" />
 
-        <ImageView
-            android:id="@+id/imageView7"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            app:layout_column="0"
-            app:layout_row="2"
-            app:srcCompat="@drawable/empty" />
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                app:layout_column="1"
+                app:layout_row="1"
+                app:srcCompat="@drawable/empty" />
 
-        <ImageView
-            android:id="@+id/imageView8"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            app:layout_column="1"
-            app:layout_row="2"
-            app:srcCompat="@drawable/empty" />
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                app:layout_column="0"
+                app:layout_row="1"
+                app:srcCompat="@drawable/empty" />
 
-        <ImageView
-            android:id="@+id/imageView9"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            app:layout_column="2"
-            app:layout_row="2"
-            app:srcCompat="@drawable/empty" />
-    </android.support.v7.widget.GridLayout>
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                app:layout_column="2"
+                app:layout_row="1"
+                app:srcCompat="@drawable/empty" />
 
-    <Button
-        android:id="@+id/bRetour"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="25dp"
-        android:layout_marginStart="16dp"
-        android:background="#292929"
-        android:text="@string/bBack"
-        android:textColor="#FFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                app:layout_column="0"
+                app:layout_row="2"
+                app:srcCompat="@drawable/empty" />
 
-    <Button
-        android:id="@+id/bReset"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="25dp"
-        android:layout_marginEnd="16dp"
-        android:background="#292929"
-        android:text="@string/bReset"
-        android:textColor="#FFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+            <ImageView
+                android:id="@+id/imageView8"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                app:layout_column="1"
+                app:layout_row="2"
+                app:srcCompat="@drawable/empty" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="4dp"
-        android:text=""
-        android:textColor="#FFF"
-        android:textSize="40dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/gridLayout"
+            <ImageView
+                android:id="@+id/imageView9"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                app:layout_column="2"
+                app:layout_row="2"
+                app:srcCompat="@drawable/empty" />
+        </android.support.v7.widget.GridLayout>
+    </android.support.constraint.ConstraintLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout4"
+        android:layout_width="0dp"
+        android:layout_height="113dp"
+        android:layout_marginTop="1dp"
+        android:background="#a00000"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayout3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text=""
+            android:textColor="#000"
+            android:textSize="40dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/gridLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>

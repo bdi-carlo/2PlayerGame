@@ -6,12 +6,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
-public class ConfigTicTacToeActivity extends AppCompatActivity {
+public class ConfigSpeedBalloonActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_config_tic_tac_toe);
+        setContentView(R.layout.activity_config_speed_balloon);
 
         final android.content.Context cont = this;
 
@@ -20,7 +20,7 @@ public class ConfigTicTacToeActivity extends AppCompatActivity {
                 EditText player1 = findViewById(R.id.editText);
                 EditText player2 = findViewById(R.id.editText2);
 
-                Intent intent = new Intent(cont, TicTacToeActivity.class);
+                Intent intent = new Intent(cont, SpeedBalloonActivity.class);
                 intent.putExtra("player1", player1.getText().toString());
                 intent.putExtra("player2", player2.getText().toString());
                 startActivity(intent);

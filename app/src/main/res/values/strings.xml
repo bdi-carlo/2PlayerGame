@@ -2,6 +2,7 @@
     <string name="app_name">2PlayerGame</string>
 
     <string name="ticTitle">Tic Tac Toe</string>
+    <string name="speedTitle">SpeedBalloon</string>
     <string name="tie">Tie !</string>
     <string name="win">won !</string>
     <string name="player">Player</string>

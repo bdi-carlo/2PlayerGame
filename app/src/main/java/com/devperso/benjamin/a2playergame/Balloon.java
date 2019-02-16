@@ -17,8 +17,8 @@ public class Balloon {
         this.iv.setY(-200.0f);       //hors ecran
         this.y = -200;
         this.color = col;       //couleur ballon
-        if(col.equals("red")) this.score=10;        //score quand éclater
-        else this.score=-30;
+        if(col.equals("black")) this.score=-30;        //score quand éclater
+        else this.score=10;
     }
 
     //Getter
