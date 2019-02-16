@@ -258,8 +258,9 @@ public class SpeedBalloonActivity extends AppCompatActivity {
         b.setY(b.getY()-(10*vitesse));
         //Si ballon hors écran, on le fait repop en bas à un X aleatoire
         if(b.getIv().getY()+b.getIv().getHeight()<0){
+            x = (float)Math.floor(Math.random()*(screenWidth - b.getIv().getWidth()));
             b.setX(x);
-            alea = (int)(100 + (Math.random() * (1000-100)));
+            alea = (int)(100 + (Math.random() * ((screenHeight/2)-100)));
             b.setY(screenHeight + alea);
         }
         //Deplacement ballon
