@@ -4,7 +4,7 @@
     <string name="ticTitle">Tic Tac Toe</string>
     <string name="speedTitle">SpeedBalloon</string>
     <string name="tie">Tie !</string>
-    <string name="win">won !</string>
+    <string name="win">is the winner !</string>
     <string name="player">Player</string>
     <string name="finish">Game is finished !</string>
     <string name="full">Box is already filled !</string>
@@ -18,4 +18,6 @@
     <string name="textHang">Enter a word from 3 to 13 letters</string>
     <string name="warningTitle">Warning</string>
     <string name="warningMessage">Warning the word is too small or too long !</string>
+    <string name="better">can he do better ?</string>
+    <string name="score">Your score is </string>
 </resources>

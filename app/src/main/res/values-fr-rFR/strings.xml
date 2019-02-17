@@ -7,7 +7,7 @@
     <string name="full">Case déjà remplie !</string>
     <string name="player">Joueur</string>
     <string name="tie">Egalité !</string>
-    <string name="win">gagné !</string>
+    <string name="win">a gagné !</string>
     <string name="bExit">Quitter</string>
     <string name="bStart">Commencer</string>
     <string name="ticTitle">Morpion</string>
@@ -17,4 +17,6 @@
     <string name="textHang">Entrez un mot de 3 à 13 lettres</string>
     <string name="warningTitle">Attention</string>
     <string name="warningMessage">Attention le mot est trop court ou trop long !</string>
+    <string name="better">pourra-t-il faire mieux ?</string>
+    <string name="score">"Ton score est "</string>
 </resources>

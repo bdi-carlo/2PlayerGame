@@ -124,7 +124,7 @@ public class SpeedBalloonActivity extends AppCompatActivity {
 
                 timeleft=0;
                 updateTimer();
-                String s = "Ton score : " + score;
+                String s = getString(R.string.score) + score;
 
                 hand.removeCallbacks(animatedBalloon);
                 br1.setY(-200.0f);
@@ -137,7 +137,7 @@ public class SpeedBalloonActivity extends AppCompatActivity {
 
                 if(player==1) { //le joueur 1 viens de jouer
 
-                    s += "\n## Tour du Joueur 2 ##\nLe joueur 2 pourra t-il faire mieux ?";
+                    s += "\n## Tour du Joueur 2 ##\nLe joueur 2 " + getString(R.string.better);
                     player=2;
                     timeleft=60000;
                     nuage1.setVisibility(View.GONE);
@@ -151,8 +151,8 @@ public class SpeedBalloonActivity extends AppCompatActivity {
                 else{       //le joueur 2 viens de jouer
 
                     s += "\n\n##" + scorej1 + " VS " + score  + "##\n";
-                    if(score>scorej1) s+= "Le joueur 2 à gagné !";
-                    else s+= "Le joueur 1 à gagné !";
+                    if(score>scorej1) s+= "Le joueur 2 " + getString(R.string.win);
+                    else s+= "Le joueur 1 " + getString(R.string.win);
                     resultat.setMessage(s);
                     alert3 = resultat.create();
                 }
