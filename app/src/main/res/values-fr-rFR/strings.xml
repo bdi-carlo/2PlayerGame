@@ -13,4 +13,8 @@
     <string name="ticTitle">Morpion</string>
     <string name="player1">Joueur 1</string>
     <string name="player2">Joueur 2</string>
+    <string name="hangTitle">Le Pendu</string>
+    <string name="textHang">Entrez un mot de 3 à 13 lettres</string>
+    <string name="warningTitle">Attention</string>
+    <string name="warningMessage">Attention le mot est trop court ou trop long !</string>
 </resources>

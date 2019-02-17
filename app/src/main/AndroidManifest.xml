@@ -27,7 +27,11 @@
         <activity
             android:name=".ConfigTicTacToeActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".ConfigSpeedBalloonActivity"></activity>
+        <activity android:name=".ConfigSpeedBalloonActivity" />
+        <activity
+            android:name=".HangmanActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ConfigHangmanActivity"></activity>
     </application>
 
 </manifest>

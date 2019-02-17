@@ -80,8 +80,8 @@ public class SpeedBalloonActivity extends AppCompatActivity {
         screenHeight = size.y;
 
         //Explication des règles et lancement
-        builder= new AlertDialog.Builder(this);
-        resultat = new AlertDialog.Builder(this);
+        builder= new AlertDialog.Builder(this).setCancelable(false);
+        resultat = new AlertDialog.Builder(this).setCancelable(false);
 
         builder.setMessage("## Tour du Joueur 1 ##\nRègles : Eclater les ballons rouges mais éviter les ballons noirs, vous avez 1 minute !");
         builder.setPositiveButton("C'est parti mon kiki !", new DialogInterface.OnClickListener() {

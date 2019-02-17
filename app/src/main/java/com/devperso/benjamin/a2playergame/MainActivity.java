@@ -4,8 +4,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,7 +18,11 @@ public class MainActivity extends AppCompatActivity {
 
         final Context cont = this;
 
-        findViewById(R.id.bTicTac).setOnClickListener(new View.OnClickListener() {
+        final ImageView TicTac = findViewById(R.id.bTicTac);
+        final ImageView SpeedBalloon = findViewById(R.id.bSpeedBalloon);
+        final ImageView Hangman = findViewById(R.id.bHangman);
+
+        TicTac.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent( cont, ConfigTicTacToeActivity.class );
@@ -24,10 +30,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        findViewById(R.id.bSpeedBalloon).setOnClickListener(new View.OnClickListener() {
+        SpeedBalloon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent( cont, SpeedBalloonActivity.class );
+                startActivity( intent );
+            }
+        });
+
+        Hangman.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent( cont, ConfigHangmanActivity.class );
                 startActivity( intent );
             }
         });
