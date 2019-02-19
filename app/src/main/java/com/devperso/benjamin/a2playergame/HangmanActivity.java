@@ -15,6 +15,9 @@ public class HangmanActivity extends Activity {
 
     private String word;
     private Context cont;
+    private int nbMistakes;
+    // Dictionary of alphabet
+    String[] alphabet;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,17 +25,65 @@ public class HangmanActivity extends Activity {
         setContentView(R.layout.activity_hangman);
 
         this.cont = this;
+        this.nbMistakes = 0;
+        this.alphabet = new String[]{"A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"};
 
         Intent intent = getIntent();
         this.word = intent.getStringExtra("word");
 
-        findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                hideWord();
-            }
-        });
+        // Hide the word with "_"
+        hideWord();
 
+        // ---- Création dynamique des bouttons pour chaque lettre avec comme identifiant bA, bB, bC, bD, ect ...
+
+        // For each letter button we verif if the corresponding letter is in the word and we block this button after that
+        for( int i=0 ; i < 26 ; i++ ) {
+            final String letter = alphabet[i];
+
+            String variableName = "b" + letter;
+            findViewById( getResourceId(variableName, "id", getPackageName()) ).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    verifLetter( letter );
+                    // Block button
+                }
+            });
+        }
+    }
+
+    public void verifLetter( String letter ){
+        boolean present = false;
+
+        for( int i=0 ; i < this.word.length() ; i++ ){
+            // If the letter is in the word we'll show all the letters in the word
+            if( String.valueOf( this.word.charAt(i) ).equals(letter) ){
+                present = true;
+
+                TextView viewLetter;
+                // To put the correct id in function of the letter's number
+                String variableName = "letter" + String.valueOf(i);
+                viewLetter = findViewById(getResourceId( variableName, "id", getPackageName() ));
+
+                if( viewLetter != null ){
+                    viewLetter.setText( String.valueOf(word.charAt(i)) );
+                }
+            }
+        }
+
+        if( !present ){
+            showOneMoreMistake();
+        }
+    }
+
+    // Draw one more step of Hangman or defeat
+    public void showOneMoreMistake(){
+        this.nbMistakes += 1;
+
+        if( this.nbMistakes == 13 ){
+            // Print loose & show the word
+            // ---- Print loose
+            showWord();
+        }
     }
 
     public void hideWord(){
@@ -52,15 +103,15 @@ public class HangmanActivity extends Activity {
         }
     }
 
-    public void printWord(){
+    public void showWord(){
         for( int i=0 ; i < this.word.length() ; i++ ){
-            TextView viewLetter = null;
+            TextView viewLetter;
             // To put the correct id in function of the letter's number
             String variableName = "letter" + String.valueOf(i);
             viewLetter = findViewById(getResourceId( variableName, "id", getPackageName() ));
 
             if( viewLetter != null ){
-                viewLetter.setText(String.valueOf(word.charAt(i)));
+                viewLetter.setText( String.valueOf(word.charAt(i)) );
             }
         }
     }
