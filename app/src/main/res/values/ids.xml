@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="letter0" type="id"/>
+    <item name="letter1" type="id"/>
+    <item name="letter2" type="id"/>
+    <item name="letter3" type="id"/>
+    <item name="letter4" type="id"/>
+    <item name="letter5" type="id"/>
+    <item name="letter6" type="id"/>
+    <item name="letter7" type="id"/>
+    <item name="letter8" type="id"/>
+    <item name="letter9" type="id"/>
+    <item name="letter10" type="id"/>
+    <item name="letter11" type="id"/>
+    <item name="letter12" type="id"/>
+</resources>
