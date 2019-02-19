@@ -30,7 +30,6 @@ public class HangmanActivity extends Activity {
             @Override
             public void onClick(View v) {
                 hideWord();
-                printWord();
             }
         });
 
