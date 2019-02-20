@@ -1,6 +1,8 @@
 package com.devperso.benjamin.a2playergame;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -45,5 +47,23 @@ public class MainActivity extends AppCompatActivity {
                 startActivity( intent );
             }
         });
+    }
+
+    // Ask to the player if he really wants to leave
+    @Override
+    public void onBackPressed() {
+        new AlertDialog.Builder( getBaseContext() ).setMessage( getString(R.string.leaveMessage) ).setPositiveButton( getString(R.string.yes), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick( DialogInterface dialog, int which ) {
+                dialog.cancel();
+
+                finish();
+            }
+        }).setNegativeButton( getString(R.string.no), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        }).setCancelable(false).show();
     }
 }

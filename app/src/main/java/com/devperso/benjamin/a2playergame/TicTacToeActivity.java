@@ -1,6 +1,8 @@
 package com.devperso.benjamin.a2playergame;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -33,7 +35,7 @@ public class TicTacToeActivity extends AppCompatActivity {
         System.out.println(this.tour);
         this.text = findViewById( R.id.textView);
         this.statut = 0;
-        this.cont = getBaseContext();
+        this.cont = this;
         setText();
 
         cases = new Case[9];
@@ -132,4 +134,21 @@ public class TicTacToeActivity extends AppCompatActivity {
             this.text.setText( this.player2 );
     }
 
+    // Ask to the player if he really wants to leave
+    @Override
+    public void onBackPressed() {
+        new AlertDialog.Builder( this.cont ).setMessage( getString(R.string.leaveMessage) ).setPositiveButton( getString(R.string.yes), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick( DialogInterface dialog, int which ) {
+                dialog.cancel();
+
+                finish();
+            }
+        }).setNegativeButton( getString(R.string.no), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        }).setCancelable(false).show();
+    }
 }

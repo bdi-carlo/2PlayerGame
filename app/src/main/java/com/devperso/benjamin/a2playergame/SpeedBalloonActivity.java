@@ -1,6 +1,7 @@
 package com.devperso.benjamin.a2playergame;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.Point;
 import android.os.CountDownTimer;
@@ -14,6 +15,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class SpeedBalloonActivity extends AppCompatActivity {
+
+    private Context cont;
 
     //Taille écran
     private int screenWidth;
@@ -57,6 +60,8 @@ public class SpeedBalloonActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_speed_balloon);
+
+        this.cont = this;
 
         //Connection avec les objets XML
         br1 = new Balloon((ImageView)findViewById(R.id.balloonred1),"red");
@@ -266,5 +271,23 @@ public class SpeedBalloonActivity extends AppCompatActivity {
         //Deplacement ballon
         b.getIv().setX(b.getX());
         b.getIv().setY(b.getY());
+    }
+
+    // Ask to the player if he really wants to leave
+    @Override
+    public void onBackPressed() {
+        new AlertDialog.Builder( this.cont ).setMessage( getString(R.string.leaveMessage) ).setPositiveButton( getString(R.string.yes), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick( DialogInterface dialog, int which ) {
+                dialog.cancel();
+
+                finish();
+            }
+        }).setNegativeButton( getString(R.string.no), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        }).setCancelable(false).show();
     }
 }
