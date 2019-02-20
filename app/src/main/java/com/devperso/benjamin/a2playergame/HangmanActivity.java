@@ -58,6 +58,8 @@ public class HangmanActivity extends Activity {
                     verifLetter( letter );
                     // Block button
                     actual.setEnabled(false);
+                    // Check if player won
+                    checkWin();
                 }
             });
         }
@@ -130,6 +132,7 @@ public class HangmanActivity extends Activity {
         String variableName = "mistake" + String.valueOf(this.nbMistakes);
         hangman.setImageResource( getResourceId( variableName, "drawable", getPackageName() ) );
 
+        // Loose !
         if( this.nbMistakes == 11 ){
             // Print loose & show the word & disable all buttons
             new AlertDialog.Builder( this.cont ).setMessage( getString(R.string.looseMessage) ).setPositiveButton("OK", new DialogInterface.OnClickListener() {
@@ -139,15 +142,20 @@ public class HangmanActivity extends Activity {
                 }
             }).setCancelable(false).show();
 
-            for( int i=0 ; i < 26 ; i++ ) {
-                final String letter = alphabet[i];
-
-                String idButton = "b" + letter;
-                final Button actual = findViewById( getResourceId( idButton, "id", getPackageName() ) );
-                actual.setEnabled(false);
-            }
+            // Block all buttons because game is finished
+            blockButtons();
 
             showWord();
+        }
+    }
+
+    public void blockButtons(){
+        for( int i=0 ; i < 26 ; i++ ) {
+            final String letter = alphabet[i];
+
+            String idButton = "b" + letter;
+            final Button actual = findViewById( getResourceId( idButton, "id", getPackageName() ) );
+            actual.setEnabled(false);
         }
     }
 
@@ -190,6 +198,43 @@ public class HangmanActivity extends Activity {
             e.printStackTrace();
             return -1;
         }
+    }
+
+    public void checkWin(){
+        boolean win = true;
+
+        for( int i=0 ; i < this.word.length() ; i++ ){
+            TextView viewLetter;
+            // To put the correct id in function of the letter's number
+            String variableName = "letter" + String.valueOf(i);
+            viewLetter = findViewById(getResourceId( variableName, "id", getPackageName() ));
+
+            if( viewLetter.getText().equals("_") ){
+                win = false;
+            }
+        }
+
+        if( win ){
+            blockButtons();
+
+            new AlertDialog.Builder( this.cont ).setMessage( getString(R.string.winMessage) ).setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick( DialogInterface dialog, int which ) {
+                    dialog.cancel();
+                }
+            }).setNegativeButton( getString(R.string.again), new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.cancel();
+
+                    finish();
+
+                    Intent intent = new Intent( cont, ConfigHangmanActivity.class );
+                    startActivity( intent );
+                }
+            }).setCancelable(false).show();
+        }
+
     }
 
 }

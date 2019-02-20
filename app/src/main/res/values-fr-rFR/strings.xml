@@ -20,4 +20,6 @@
     <string name="better">pourra-t-il faire mieux ?</string>
     <string name="score">"Ton score est "</string>
     <string name="looseMessage">Perdu !</string>
+    <string name="winMessage">Super tu as trouvé le mot !</string>
+    <string name="again">Rejouer</string>
 </resources>

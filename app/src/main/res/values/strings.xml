@@ -21,4 +21,6 @@
     <string name="better">can he do better ?</string>
     <string name="score">Your score is </string>
     <string name="looseMessage">Game Over !</string>
+    <string name="winMessage">Congratulation you found the word !</string>
+    <string name="again">Play again</string>
 </resources>
