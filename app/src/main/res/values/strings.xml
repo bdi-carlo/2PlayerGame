@@ -20,4 +20,5 @@
     <string name="warningMessage">Warning the word is too small or too long !</string>
     <string name="better">can he do better ?</string>
     <string name="score">Your score is </string>
+    <string name="looseMessage">Game Over !</string>
 </resources>

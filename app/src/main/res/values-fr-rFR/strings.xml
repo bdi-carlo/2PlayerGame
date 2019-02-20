@@ -19,4 +19,5 @@
     <string name="warningMessage">Attention le mot est trop court ou trop long !</string>
     <string name="better">pourra-t-il faire mieux ?</string>
     <string name="score">"Ton score est "</string>
+    <string name="looseMessage">Perdu !</string>
 </resources>

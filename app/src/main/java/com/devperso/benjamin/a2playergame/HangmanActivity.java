@@ -1,11 +1,15 @@
 package com.devperso.benjamin.a2playergame;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -37,18 +41,20 @@ public class HangmanActivity extends Activity {
         // ---- Création dynamique des bouttons pour chaque lettre avec comme identifiant bA, bB, bC, bD, ect ...
 
         // For each letter button we verif if the corresponding letter is in the word and we block this button after that
-        for( int i=0 ; i < 26 ; i++ ) {
+       /*for( int i=0 ; i < 26 ; i++ ) {
             final String letter = alphabet[i];
 
             String variableName = "b" + letter;
-            findViewById( getResourceId(variableName, "id", getPackageName()) ).setOnClickListener(new View.OnClickListener() {
+            final Button actual = findViewById( getResourceId(variableName, "id", getPackageName()) );
+            actual.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     verifLetter( letter );
                     // Block button
+                    actual.setEnabled(false);
                 }
             });
-        }
+        }*/
     }
 
     public void verifLetter( String letter ){
@@ -62,7 +68,7 @@ public class HangmanActivity extends Activity {
                 TextView viewLetter;
                 // To put the correct id in function of the letter's number
                 String variableName = "letter" + String.valueOf(i);
-                viewLetter = findViewById(getResourceId( variableName, "id", getPackageName() ));
+                viewLetter = findViewById( getResourceId( variableName, "id", getPackageName() ) );
 
                 if( viewLetter != null ){
                     viewLetter.setText( String.valueOf(word.charAt(i)) );
@@ -79,11 +85,27 @@ public class HangmanActivity extends Activity {
     public void showOneMoreMistake(){
         this.nbMistakes += 1;
 
-        // ---- Draw the nex step of the hangman
+        ImageView hangman = findViewById(R.id.imageHangman);
+        String variableName = "mistake" + String.valueOf(this.nbMistakes);
+        hangman.setImageResource( getResourceId( variableName, "drawable", getPackageName() ) );
 
-        if( this.nbMistakes == 13 ){
-            // Print loose & show the word
-            // ---- Print loose
+        if( this.nbMistakes == 11 ){
+            // Print loose & show the word & disable all buttons
+            new AlertDialog.Builder( this.cont ).setMessage( getString(R.string.looseMessage) ).setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick( DialogInterface dialog, int which ) {
+                    dialog.cancel();
+                }
+            }).setCancelable(false).show();
+
+            for( int i=0 ; i < 26 ; i++ ) {
+                final String letter = alphabet[i];
+
+                String idButton = "b" + letter;
+                final Button actual = findViewById( getResourceId( idButton, "id", getPackageName() ) );
+                actual.setEnabled(false);
+            }
+
             showWord();
         }
     }
