@@ -25,6 +25,7 @@ public class HangmanActivity extends Activity {
     private String word;
     private Context cont;
     private int nbMistakes;
+    private boolean gameFinish;
     // Dictionary of alphabet
     String[] alphabet;
 
@@ -33,6 +34,7 @@ public class HangmanActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hangman);
 
+        this.gameFinish = false;
         this.cont = this;
         this.nbMistakes = 0;
         this.alphabet = new String[]{"A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"};
@@ -59,7 +61,8 @@ public class HangmanActivity extends Activity {
                     // Block button
                     actual.setEnabled(false);
                     // Check if player won
-                    checkWin();
+                    if( !gameFinish )
+                        checkWin();
                 }
             });
         }
@@ -134,11 +137,22 @@ public class HangmanActivity extends Activity {
 
         // Loose !
         if( this.nbMistakes == 11 ){
+            this.gameFinish = true;
             // Print loose & show the word & disable all buttons
             new AlertDialog.Builder( this.cont ).setMessage( getString(R.string.looseMessage) ).setPositiveButton("OK", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick( DialogInterface dialog, int which ) {
                     dialog.cancel();
+                }
+            }).setNegativeButton( getString(R.string.again), new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.cancel();
+
+                    finish();
+
+                    Intent intent = new Intent( cont, ConfigHangmanActivity.class );
+                    startActivity( intent );
                 }
             }).setCancelable(false).show();
 
@@ -234,7 +248,6 @@ public class HangmanActivity extends Activity {
                 }
             }).setCancelable(false).show();
         }
-
     }
 
 }

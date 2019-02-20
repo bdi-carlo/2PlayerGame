@@ -22,7 +22,10 @@ public class ConfigHangmanActivity extends AppCompatActivity {
             public void onClick( View v ) {
                 EditText eWord = findViewById(R.id.word);
 
-                if( eWord.getText().toString().length() < 3 || eWord.getText().toString().length() > 13 ){
+                //Removing spaces
+                String word = eWord.getText().toString().replaceAll("\\s", "" );
+
+                if( word.length() < 3 || word.length() > 13 ){
                     new AlertDialog.Builder( cont ).setTitle( getString(R.string.warningTitle) ).setMessage( getString(R.string.warningMessage) ).setPositiveButton("OK", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick( DialogInterface dialog, int which ) {
@@ -32,7 +35,7 @@ public class ConfigHangmanActivity extends AppCompatActivity {
                 }
                 else{
                     Intent intent = new Intent(cont, HangmanActivity.class);
-                    intent.putExtra("word", eWord.getText().toString().toUpperCase());
+                    intent.putExtra("word", word.toUpperCase());
                     startActivity(intent);
 
                     finish();
