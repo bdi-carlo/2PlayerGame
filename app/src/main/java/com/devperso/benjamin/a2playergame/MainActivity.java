@@ -13,12 +13,14 @@ import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
 
+    private Context cont;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final Context cont = this;
+        this.cont = this;
 
         final ImageView TicTac = findViewById(R.id.bTicTac);
         final ImageView SpeedBalloon = findViewById(R.id.bSpeedBalloon);
@@ -52,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
     // Ask to the player if he really wants to leave
     @Override
     public void onBackPressed() {
-        new AlertDialog.Builder( getBaseContext() ).setMessage( getString(R.string.leaveMessage) ).setPositiveButton( getString(R.string.yes), new DialogInterface.OnClickListener() {
+        new AlertDialog.Builder( this.cont ).setMessage( getString(R.string.leaveMessage) ).setPositiveButton( getString(R.string.yes), new DialogInterface.OnClickListener() {
             @Override
             public void onClick( DialogInterface dialog, int which ) {
                 dialog.cancel();
