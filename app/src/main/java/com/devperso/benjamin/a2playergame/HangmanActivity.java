@@ -6,13 +6,18 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
 
+import java.text.Collator;
+import java.text.Normalizer;
+import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
 public class HangmanActivity extends Activity {
@@ -39,9 +44,10 @@ public class HangmanActivity extends Activity {
         hideWord();
 
         // ---- Création dynamique des bouttons pour chaque lettre avec comme identifiant bA, bB, bC, bD, ect ...
+        createButtonLetters();
 
         // For each letter button we verif if the corresponding letter is in the word and we block this button after that
-       /*for( int i=0 ; i < 26 ; i++ ) {
+       for( int i=0 ; i < 26 ; i++ ) {
             final String letter = alphabet[i];
 
             String variableName = "b" + letter;
@@ -54,7 +60,32 @@ public class HangmanActivity extends Activity {
                     actual.setEnabled(false);
                 }
             });
-        }*/
+        }
+    }
+
+    public void createButtonLetters(){
+        LinearLayout line1 = findViewById(R.id.line1);
+        LinearLayout line2 = findViewById(R.id.line2);
+        LinearLayout line3 = findViewById(R.id.line3);
+
+        for( int i=0 ; i < 26 ; i++ ){
+            Button buttonLetter = new Button( this.cont );
+            buttonLetter.setText( alphabet[i] );
+            String variableName = "b" + alphabet[i];
+            buttonLetter.setId( getResourceId(variableName, "id", getPackageName()) );
+            ViewGroup.LayoutParams lp = new LinearLayout.LayoutParams( LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT, 1.0f );
+            buttonLetter.setLayoutParams(lp);
+
+            if( i < 10 ){
+                line1.addView( buttonLetter );
+            }
+            else if( i < 20 ){
+                line2.addView( buttonLetter );
+            }
+            else{
+                line3.addView( buttonLetter );
+            }
+        }
     }
 
     public void verifLetter( String letter ){
@@ -62,7 +93,7 @@ public class HangmanActivity extends Activity {
 
         for( int i=0 ; i < this.word.length() ; i++ ){
             // If the letter is in the word we'll show all the letters in the word
-            if( String.valueOf( this.word.charAt(i) ).equals(letter) ){
+            if( sameChar( String.valueOf(this.word.charAt(i)), letter ) ){
                 present = true;
 
                 TextView viewLetter;
@@ -79,6 +110,16 @@ public class HangmanActivity extends Activity {
         if( !present ){
             showOneMoreMistake();
         }
+    }
+
+    public static boolean sameChar( String a, String b ){
+        //Collator permet de faire des comparaison entre chaine de caracteres
+        Collator compareChar = Collator.getInstance(Locale.FRENCH);
+        //Primary annule accent et case (secondary annule que case et tertiary = .equal())
+        compareChar.setStrength(Collator.PRIMARY);
+        int res = compareChar.compare(a, b); //0--> identiques, -1 --> differents
+
+        return (res == 0);
     }
 
     // Draw one more step of Hangman or defeat

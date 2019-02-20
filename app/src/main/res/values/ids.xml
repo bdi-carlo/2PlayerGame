@@ -13,4 +13,31 @@
     <item name="letter10" type="id"/>
     <item name="letter11" type="id"/>
     <item name="letter12" type="id"/>
+
+    <item name="bA" type="id"/>
+    <item name="bB" type="id"/>
+    <item name="bC" type="id"/>
+    <item name="bD" type="id"/>
+    <item name="bE" type="id"/>
+    <item name="bF" type="id"/>
+    <item name="bG" type="id"/>
+    <item name="bH" type="id"/>
+    <item name="bI" type="id"/>
+    <item name="bJ" type="id"/>
+    <item name="bK" type="id"/>
+    <item name="bL" type="id"/>
+    <item name="bM" type="id"/>
+    <item name="bN" type="id"/>
+    <item name="bO" type="id"/>
+    <item name="bP" type="id"/>
+    <item name="bQ" type="id"/>
+    <item name="bR" type="id"/>
+    <item name="bS" type="id"/>
+    <item name="bT" type="id"/>
+    <item name="bU" type="id"/>
+    <item name="bV" type="id"/>
+    <item name="bW" type="id"/>
+    <item name="bX" type="id"/>
+    <item name="bY" type="id"/>
+    <item name="bZ" type="id"/>
 </resources>
