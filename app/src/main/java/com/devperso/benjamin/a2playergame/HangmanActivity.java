@@ -79,6 +79,8 @@ public class HangmanActivity extends Activity {
     public void showOneMoreMistake(){
         this.nbMistakes += 1;
 
+        // ---- Draw the nex step of the hangman
+
         if( this.nbMistakes == 13 ){
             // Print loose & show the word
             // ---- Print loose
