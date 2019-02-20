@@ -22,4 +22,7 @@
     <string name="looseMessage">Perdu !</string>
     <string name="winMessage">Super tu as trouvé le mot !</string>
     <string name="again">Rejouer</string>
+    <string name="yes">OUI</string>
+    <string name="no">NON</string>
+    <string name="leaveMessage">Veux-tu vraiment quitter ?</string>
 </resources>

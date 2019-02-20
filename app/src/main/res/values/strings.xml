@@ -23,4 +23,7 @@
     <string name="looseMessage">Game Over !</string>
     <string name="winMessage">Congratulation you found the word !</string>
     <string name="again">Play again</string>
+    <string name="yes">YES</string>
+    <string name="no">NO</string>
+    <string name="leaveMessage">Do you really wants to leave ?</string>
 </resources>

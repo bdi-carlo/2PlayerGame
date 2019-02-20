@@ -250,4 +250,22 @@ public class HangmanActivity extends Activity {
         }
     }
 
+    // Ask to the player if he really wants to leave
+    @Override
+    public void onBackPressed() {
+        new AlertDialog.Builder( this.cont ).setMessage( getString(R.string.leaveMessage) ).setPositiveButton( getString(R.string.yes), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick( DialogInterface dialog, int which ) {
+                dialog.cancel();
+
+                finish();
+            }
+        }).setNegativeButton( getString(R.string.no), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        }).setCancelable(false).show();
+    }
+
 }
