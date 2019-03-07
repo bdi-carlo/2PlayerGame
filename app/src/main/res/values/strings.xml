@@ -15,7 +15,7 @@
     <string name="player1">Player 1</string>
     <string name="player2">Player 2</string>
     <string name="hangTitle">The Hangman</string>
-    <string name="textHang">Enter a word from 3 to 13 letters</string>
+    <string name="textHang">Enter a word from 3 to 16 letters</string>
     <string name="warningTitle">Warning</string>
     <string name="warningMessage">Warning the word is too small or too long !</string>
     <string name="better">can he do better ?</string>

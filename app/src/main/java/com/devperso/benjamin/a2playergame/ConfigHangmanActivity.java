@@ -25,7 +25,7 @@ public class ConfigHangmanActivity extends AppCompatActivity {
                 //Removing spaces
                 String word = eWord.getText().toString().replaceAll("\\s", "" );
 
-                if( word.length() < 3 || word.length() > 13 ){
+                if( word.length() < 3 || word.length() > 16 ){
                     new AlertDialog.Builder( cont ).setTitle( getString(R.string.warningTitle) ).setMessage( getString(R.string.warningMessage) ).setPositiveButton("OK", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick( DialogInterface dialog, int which ) {

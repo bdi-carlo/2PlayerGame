@@ -78,7 +78,7 @@ public class HangmanActivity extends Activity {
             buttonLetter.setText( alphabet[i] );
             String variableName = "b" + alphabet[i];
             buttonLetter.setId( getResourceId(variableName, "id", getPackageName()) );
-            ViewGroup.LayoutParams lp = new LinearLayout.LayoutParams( LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT, 1.0f );
+            ViewGroup.LayoutParams lp = new LinearLayout.LayoutParams( LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT, 0.8f );
             buttonLetter.setLayoutParams(lp);
 
             if( i < 10 ){
@@ -179,8 +179,8 @@ public class HangmanActivity extends Activity {
         for( int i=0 ; i < this.word.length() ; i++ ){
             TextView viewLetter = new TextView( this.cont );
             viewLetter.setText( "_" );
-            viewLetter.setTextSize( 1, 35 );
-            viewLetter.setPadding( 0, 0, 4, 0 );
+            viewLetter.setTextSize( 1, 30 );
+            viewLetter.setPadding( 0, 0, 5, 0 );
 
             // To put the correct id in function of the letter's number
             String variableName = "letter" + String.valueOf(i);
