@@ -4,20 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#292929"
     tools:context=".ConfigSpeedBalloonActivity"
-    tools:layout_editor_absoluteY="25dp"
-    android:background="#292929">
+    tools:layout_editor_absoluteY="25dp">
 
     <RelativeLayout
         android:id="@+id/relativeLayout"
-        android:layout_width="0dp"
-        android:layout_height="275dp"
-        android:layout_marginBottom="130dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginStart="50dp"
+        android:layout_width="312dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="133dp"
         android:background="@drawable/line"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2">
 
@@ -48,8 +47,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="44dp"
                 android:ems="10"
+                android:hint="@string/player1"
                 android:inputType="textPersonName"
-                android:text="@string/player1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
@@ -59,13 +58,14 @@
                 android:id="@+id/editText2"
                 android:layout_width="170dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="24dp"
-                android:layout_marginTop="105dp"
+                android:layout_marginTop="10dp"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="@string/player2"
-                app:layout_constraintStart_toStartOf="@+id/editText"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:hint="@string/player2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editText" />
 
         </android.support.constraint.ConstraintLayout>
 
@@ -75,8 +75,8 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="53dp"
-        android:layout_marginTop="46dp"
+        android:layout_marginBottom="133dp"
+        android:layout_marginTop="88dp"
         android:text="@string/speedTitle"
         android:textColor="@android:color/white"
         android:textSize="40dp"

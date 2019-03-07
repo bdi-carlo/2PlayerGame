@@ -3,6 +3,7 @@ package com.devperso.benjamin.a2playergame;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Point;
 import android.os.CountDownTimer;
 import android.os.Handler;
@@ -55,8 +56,8 @@ public class SpeedBalloonActivity extends AppCompatActivity {
     AlertDialog.Builder resultat;
 
     //Pseudos
-    private String pseudoj1 = "Bob";
-    private String pseudoj2 = "Billy";
+    private String pseudoj1;
+    private String pseudoj2;
 
 
     //Main
@@ -64,6 +65,10 @@ public class SpeedBalloonActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_speed_balloon);
+
+        Intent intent = getIntent();
+        this.pseudoj1 = intent.getStringExtra("player1");
+        this.pseudoj2 = intent.getStringExtra("player2");
 
         this.cont = this;
 

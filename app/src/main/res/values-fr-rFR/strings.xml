@@ -26,7 +26,7 @@
     <string name="no">NON</string>
     <string name="leaveMessage">Veux-tu vraiment quitter ?</string>
     <string name="speedTitle">SpeedBalloon</string>
-    <string name="SBPlayer1">, à ton tour :\\nRègles : Eclater les ballons colorés mais éviter les ballons noirs, vous avez 1 minute !</string>
+    <string name="SBPlayer1">, à ton tour :\nRègles : Eclater les ballons colorés mais éviter les ballons noirs, vous avez 1 minute !</string>
     <string name="SBStart">Jouer</string>
-    <string name="SBPlayer2">peut-il faire mieux ?</string>
+    <string name="SBPlayer2">à ton tour, peut-il faire mieux ?</string>
 </resources>

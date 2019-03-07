@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         SpeedBalloon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent( cont, SpeedBalloonActivity.class );
+                Intent intent = new Intent( cont, ConfigSpeedBalloonActivity.class );
                 startActivity( intent );
             }
         });

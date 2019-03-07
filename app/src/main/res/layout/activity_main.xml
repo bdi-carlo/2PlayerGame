@@ -93,7 +93,7 @@
             android:id="@+id/textView5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="DEBONNE Valentin and DI CARLO Benjamin"
+            android:text="DEBONNE Valentin - DI CARLO Benjamin"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"

@@ -27,5 +27,5 @@
     <string name="leaveMessage">Do you really wants to leave ?</string>
     <string name="SBPlayer1">\'s turn :\nRules : Burst colored balloons but avoid black balloons, you have 1 minute !</string>
     <string name="SBStart"> Start </string>
-    <string name="SBPlayer2">can he do better ?</string>
+    <string name="SBPlayer2">\'s turn, can he do better ?</string>
 </resources>
