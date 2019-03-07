@@ -54,6 +54,10 @@ public class SpeedBalloonActivity extends AppCompatActivity {
     AlertDialog.Builder builder;
     AlertDialog.Builder resultat;
 
+    //Pseudos
+    private String pseudoj1 = "Bob";
+    private String pseudoj2 = "Billy";
+
 
     //Main
     @Override
@@ -90,8 +94,8 @@ public class SpeedBalloonActivity extends AppCompatActivity {
         resultat = new AlertDialog.Builder(this).setCancelable(false);
 
         //Creation des boites de dialogue
-        builder.setMessage("## Tour du Joueur 1 ##\nRègles : Eclater les ballons rouges mais éviter les ballons noirs, vous avez 1 minute !");
-        builder.setPositiveButton("Go !", new DialogInterface.OnClickListener() {
+        builder.setMessage(pseudoj1 + getString(R.string.SBPlayer1));
+        builder.setPositiveButton(getString(R.string.SBStart), new DialogInterface.OnClickListener() {
 
             public void onClick(DialogInterface dialog, int which) {
                 dialog.cancel();
@@ -133,7 +137,7 @@ public class SpeedBalloonActivity extends AppCompatActivity {
 
                 timeleft=0;
                 updateTimer();
-                String s = getString(R.string.score) + score;
+                String s = getString(R.string.score) + " " + score;
 
                 hand.removeCallbacks(animatedBalloon);
                 br1.setY(-200.0f);
@@ -146,7 +150,7 @@ public class SpeedBalloonActivity extends AppCompatActivity {
 
                 if(player==1) { //le joueur 1 viens de jouer
 
-                    s += "\n## Tour du Joueur 2 ##\nLe joueur 2 " + getString(R.string.better);
+                    s += "\n"+ pseudoj2 + " " + getString(R.string.SBPlayer2);
                     player=2;
                     timeleft=60000;
                     nuage1.setVisibility(View.GONE);
@@ -159,9 +163,9 @@ public class SpeedBalloonActivity extends AppCompatActivity {
                 }
                 else{       //le joueur 2 viens de jouer
 
-                    s += "\n\n##" + scorej1 + " VS " + score  + "##\n";
-                    if(score>scorej1) s+= "Le joueur 2 " + getString(R.string.win);
-                    else s+= "Le joueur 1 " + getString(R.string.win);
+                    s += "\n\n## " + scorej1 + " VS " + score  + " ##\n";
+                    if(score>scorej1) s+= pseudoj2 + " " + getString(R.string.win);
+                    else s+= pseudoj1 + " " + getString(R.string.win);
                     resultat.setMessage(s);
                     alert3 = resultat.create();
                 }
