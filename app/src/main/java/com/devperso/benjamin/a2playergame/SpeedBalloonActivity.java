@@ -83,20 +83,22 @@ public class SpeedBalloonActivity extends AppCompatActivity {
         disp.getSize(size);
         screenWidth = size.x;
         screenHeight = size.y;
+        System.out.println(screenHeight);
 
         //Explication des règles et lancement
         builder= new AlertDialog.Builder(this).setCancelable(false);
         resultat = new AlertDialog.Builder(this).setCancelable(false);
 
+        //Creation des boites de dialogue
         builder.setMessage("## Tour du Joueur 1 ##\nRègles : Eclater les ballons rouges mais éviter les ballons noirs, vous avez 1 minute !");
-        builder.setPositiveButton("C'est parti mon kiki !", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton("Go !", new DialogInterface.OnClickListener() {
 
             public void onClick(DialogInterface dialog, int which) {
                 dialog.cancel();
                 play();
             }
         });
-        resultat.setPositiveButton("Retour au menu", new DialogInterface.OnClickListener() {
+        resultat.setPositiveButton("Menu", new DialogInterface.OnClickListener() {
 
             public void onClick(DialogInterface dialog, int which) {
                 dialog.cancel();
@@ -116,7 +118,8 @@ public class SpeedBalloonActivity extends AppCompatActivity {
                 timeleft=l;
                 updateTimer();
                 //Augmentation de la difficulté
-                if(l<=45000 && vitesse==1) vitesse = (float)1.5;
+                if(l<=50000 && vitesse==1) vitesse = (float)1.25;
+                if(l<=40000 && vitesse==1.25) vitesse = (float)1.5;
                 if(l<=30000 && l>15000 && nuage1.getVisibility()!=View.VISIBLE) nuage1.setVisibility(View.VISIBLE);
                 if(l<=15000 && nuage2.getVisibility()!=View.VISIBLE){
                     nuage1.setVisibility(View.GONE);
@@ -124,6 +127,7 @@ public class SpeedBalloonActivity extends AppCompatActivity {
                 }
             }
 
+            //Action quand le minuteur atteint 0
             @Override
             public void onFinish() {        //a la fin on affiche le score
 
@@ -260,7 +264,7 @@ public class SpeedBalloonActivity extends AppCompatActivity {
         int alea;
         float x = 0;
         //Avancée du ballon
-        b.setY(b.getY()-(10*vitesse));
+        b.setY(b.getY()-((screenHeight/170)*vitesse));
         //Si ballon hors écran, on le fait repop en bas à un X aleatoire
         if(b.getIv().getY()+b.getIv().getHeight()<0){
             x = (float)Math.floor(Math.random()*(screenWidth - b.getIv().getWidth()));
@@ -268,7 +272,7 @@ public class SpeedBalloonActivity extends AppCompatActivity {
             alea = (int)(100 + (Math.random() * ((screenHeight/2)-100)));
             b.setY(screenHeight + alea);
         }
-        //Deplacement ballon
+        //Deplacement de l'imageview du ballon
         b.getIv().setX(b.getX());
         b.getIv().setY(b.getY());
     }
@@ -279,8 +283,9 @@ public class SpeedBalloonActivity extends AppCompatActivity {
         new AlertDialog.Builder( this.cont ).setMessage( getString(R.string.leaveMessage) ).setPositiveButton( getString(R.string.yes), new DialogInterface.OnClickListener() {
             @Override
             public void onClick( DialogInterface dialog, int which ) {
+                hand.removeCallbacks(animatedBalloon);
+                cdtimer.cancel();
                 dialog.cancel();
-
                 finish();
             }
         }).setNegativeButton( getString(R.string.no), new DialogInterface.OnClickListener() {
