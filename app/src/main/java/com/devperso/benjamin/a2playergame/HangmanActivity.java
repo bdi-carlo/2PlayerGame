@@ -235,6 +235,7 @@ public class HangmanActivity extends Activity {
                 @Override
                 public void onClick( DialogInterface dialog, int which ) {
                     dialog.cancel();
+                    finish();
                 }
             }).setNegativeButton( getString(R.string.again), new DialogInterface.OnClickListener() {
                 @Override
