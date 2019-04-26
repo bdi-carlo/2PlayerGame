@@ -1,7 +1,7 @@
 # 2PlayerGame
 
 <p>2PlayerGame is an Android game made with Android Studio. It contains some games playable with at 2 players.</p>
-<p>Right now there is 3 games</p>
+<p>Right now there is 3 games:</p>
 
 * TicTacToe "Trump VS Poutine"
 * The Hangman Game
